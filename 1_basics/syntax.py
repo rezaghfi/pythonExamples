@@ -288,7 +288,24 @@ thislist.remove("banana") # remove specified Item
 thisList.pop(1) # remove specofied index.
 thislist.clear() # clear list
 print(thislist)
-thislist = ["apple", "banana", "cherry"]
+thislist = ["apple", "cherry", "banana"]
 for x in thislist:
   print(x)
 [print(x) for x in thislist]
+#sort list by alphanumerically
+thislist.sort()
+print(thislist)
+# copy list
+list2 = thislist.copy()
+print(list2)
+# join two list
+list1 = list2.copy()
+list3 = list1 + list2
+print(list3)
+# or extend
+list1.extend(list2)
+print(list1)
+# list method in https://www.w3schools.com/python/python_lists_methods.asp
+print("-----------------tuples----------------")
+mytuple = ("apple", "banana", "cherry")
+this
