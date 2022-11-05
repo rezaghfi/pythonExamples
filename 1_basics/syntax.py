@@ -307,5 +307,115 @@ list1.extend(list2)
 print(list1)
 # list method in https://www.w3schools.com/python/python_lists_methods.asp
 print("-----------------tuples----------------")
+print("Tuple is a collection which is ordered and unchangeable. Allows duplicate members.")
 mytuple = ("apple", "banana", "cherry")
-this
+# duplicate
+tuple1 = ("apple", "banana", "cherry", "apple", "cherry")
+print("tuple can have duplicate items: ", tuple1)
+print(len(tuple1))
+#tuple data type like list
+# create tuple with tuple() function
+tuple1[1] # access like list
+# can not change tuple but can change to list and convert to tuple
+x = (1 , 3 ,4)
+x = list(x)
+x[1] = 2
+x = tuple(x)
+print(x)
+del x # The del keyword can delete the tuple completely:
+
+# unpacking a tuple
+fruits = ("apple", "banana", "cherry")
+(green, yellow, red) = fruits
+print(green, yellow, red)
+# * astrisk
+fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
+(green, *yellow, red) = fruits
+print(green, yellow, red)
+# loop tuples
+tuple1 = ("apple", "banana", "cherry", "apple", "cherry")
+for x in tuple1:
+  print(x)
+for i in range(len(tuple1)):
+  print(tuple1[i])
+i = 0
+while i < len(tuple1):
+  print(tuple1[i])
+  i =  i + 1
+
+# join tuple like list
+# multiply tuples
+fruits = ("apple", "banana", "cherry")
+fruits2 = fruits * 2
+print("-----------------set----------------")
+print("Set items are unordered, unchangeable, and do not allow duplicate values.")
+set1 = {"abc", 34, True, 40}
+print(set1)
+# data types like tuple and list .
+# set() constructor for create new set
+# access items
+for x in set1:
+  print(x)
+
+print("-----------------python if elif else----------------")
+a = 33
+b = 200
+if a > b:
+  print("a is bigger than b")
+elif a == b:
+  print("a is equal to b")
+else:
+  print("a is smaller than b")
+
+# short hand if
+if a > b: print("a is bigger than b")
+print("a is bigger") if a > b else print("b is bigger")
+a = 220
+b = 220
+print("a") if a > b else print("=") if a == b else print ("b")
+# and
+a , b , c = 200 , 33 , 500
+if a > b and c > a:
+  print("both conditions are true")
+# or
+if a > b or a > c:
+  print("at least one conditions is true")
+# nested if
+x = 41
+if x > 10:
+  print("above ten,")
+  if x > 20:
+    print(" and also above 20!")
+  else:
+    print("but not above 20.")
+# pass
+if a > b:
+  pass
+
+print("-----------------python while loop----------------")
+i = 1
+while i < 6:
+  print(i)
+  i += 1
+print("-----------------break----------------")
+
+i = 0
+while i < 6:
+  if i == 3:
+    break
+  print(i)
+  i += 1
+print("-----------------continue----------------")
+i = 0
+while i < 6:
+  i += 1
+  if i == 3:
+    continue
+  print(i)
+print("-----------------else statement----------------")
+i = 0
+while i < 6:
+  print(i)
+  i += 1
+else:
+  print("i is no longer less than 6")
