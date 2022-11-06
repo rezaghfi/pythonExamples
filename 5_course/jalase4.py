@@ -3,25 +3,28 @@
 # boolaean
 x=bool(10 > 5)
 
-
+x = bool(10>5)
+print(x)
 x = 3
 print(bool(x > 0))
 
 # string
 
-a1 = "dfdfdfdf"
-a2 = """
-fgfgfgfgfgf
+a1 = "hasan"
+a1 = 'hasan'
+a2 = """fgfgfgfgfgf
 fgfgfgfgf
 fgfgf
 """
-a = "hasan"
+print("a2: ", a2)
+
+a = "Hassan"
 a = a.upper()
-a = a.replace("H",'R')
-print(a1)
-print(a2)
-print(a)
+print("a: ", a)
+a = a.replace("HA",'RR')
+print("a: ", a)
 print(a.find("A"))
+
 # operators
 #arithmetic
 #assignment
@@ -29,25 +32,27 @@ print(a.find("A"))
 #logical
 #identity
 #membership
-# ** / *
-# > < >= <= ==
+# + - * / // % **
 # = += *=
+x = 10
+x += 6
+# > < >= <= == !=
 # x is y
 # x in y
-x = 5
-# print(bool(x != 5))
-x = "reza"
-y = "reza"
-print(bool(x is y))
-
-
-x = "nam"
-z = ["name", "gh"]
-y = "my name is reza"
-print(x in z)
-
+# logical opertor : and or not
 x = 3
-print(bool(x==3 and x>2))
+print("is x == 3 and x > 2?", bool(x==3 and x>2))
+# identity opertor
+x = 3.0
+y = 3
+print("is x equal to y? ", x is y)
+
+# membership operator
+x = "reza"
+z = ["reza", "hasan", "ali"]
+y = "my name is reza"
+print("is x in z?",x in z)
+print("is x in y?", x in y)
 
 
 # if else elif
@@ -58,3 +63,10 @@ elif(x == 2):
     print("x is equal 2")
 else:
     print("x is smaller than 2")
+
+x = "hasan"
+y = "my name is reza"
+if(x in y):
+    print("x is exist in y")
+else:
+    print("x is not exist in y")

@@ -22,5 +22,6 @@ def drawRectangle(row):
       j += 1
     i += 1
     print("")
-
 drawRectangle(5)
+
+print("create a fuction - calling function - parameters or arguments - number of argument - arbitary arguments by * - keyword argument - arbitory keyword arguments - defualt paarameter value - passing list as a argument - return values - the pass statement - recursion - ")
