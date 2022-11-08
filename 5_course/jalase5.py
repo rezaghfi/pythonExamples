@@ -70,7 +70,7 @@ print("-----------------function ---------------")
 
 # 1. keyword def
 # 2. function name
-# 3. arguments or parameters
+# 3.  parameters
 # 4. function body
 # 5. calling function
 def my_function(firstName, lastName):
