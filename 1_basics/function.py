@@ -37,6 +37,7 @@ def guess(list):
 #guess(list)
 
 def max():
+  print("------------------- user input function -------------------------")
   a = int(input("enter input1:"))
   b = int(input("enter input2:"))
   c = int(input("enter input3:"))
