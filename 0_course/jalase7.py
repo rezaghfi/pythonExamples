@@ -30,5 +30,6 @@ def max():
 
 class car:
   # properties
+  pass
 
 
