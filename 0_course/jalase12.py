@@ -3,12 +3,12 @@ from mysql.connector import Error
 
 try:
     connection = mysql.connector.connect(host='localhost',
-                                         database='python_tutorial',
+                                         database='library',
                                          user='root',
                                          password='')
     if connection.is_connected():
         db_Info = connection.get_server_info()
-        print("Connected to MySQL Server version ", db_Info)
+        print("Connected to MySQL Server version: ", db_Info)
         cursor = connection.cursor()
         cursor.execute("select database();")
         record = cursor.fetchone()
