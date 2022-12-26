@@ -13,7 +13,9 @@ class Database():
 
   def __del__(self):
     my_db.commit()
-
+# create db todo and table work
+# table work have id, title , body , created
+# id = int , title = varchar , body = text , created = datetime()
 class Todo(Database):
   def all_students(self, mode='DESC'):
     sql = "SELECT * FROM work ORDER BY id {}".format(mode)
