@@ -2,35 +2,62 @@ import mysql.connector
 from mysql.connector import Error
 
 
-class TodoDatabase():
+class Database():
+  my_db = my_cursor = None
+
   def __init__(self):
+    global my_db, my_cursor
+    my_db = mysql.connector.connect(host="localhost", user="root", password="", database="todo")
+    my_cursor = my_db.cursor()
+    print('connect to database')
+
+  def __del__(self):
+    my_db.commit()
+
+class Todo(Database):
+  def all_students(self, mode='DESC'):
+    sql = "SELECT * FROM work ORDER BY id {}".format(mode)
     try:
-      self.connection = mysql.connector.connect(host='localhost',
-                                                database='todo',
-                                                user='root',
-                                                password='')
-      if self.connection.is_connected():
-        db_Info = self.connection.get_server_info()
-        print("Connected to MySQL Server version ", db_Info)
-        self.cursor = self.connection.cursor()
-        self.cursor.execute("select database();")
-        record = self.cursor.fetchone()
-        print("You're connected to database: ", record)
+      my_cursor.execute(sql)
+      result = my_cursor.fetchall()
+    except Exception as e:
+      return e
+    return result
 
-    except Error as e:
-      print("Error while connecting to MySQL", e)
+  def insert(self, data):
+    sql = "INSERT INTO work (title, body) VALUES (%s , %s)"
+    try:
+      my_cursor.execute(sql, data)
+    except Exception as e:
+      return e
+    return my_cursor.lastrowid
 
-  def create(self):
-    self.cursor.execute("create table if not exists work(id n")
+  def insert_many(self, data):
+    sql = "INSERT INTO work (title, body) VALUES (%s , %s)"
+    try:
+      my_cursor.executemany(sql, data)
+    except Exception as e:
+      return e
 
-  def read(self):
-    pass
+  def delete(self, id):
+    sql = "DELETE FROM work WHERE id = {}".format(id)
+    try:
+      my_cursor.execute(sql)
+    except Exception as e:
+      return e
 
-  def update(self):
-    pass
+  def update(self, id, data):
+    sql = "UPDATE work SET title = %s ,body = %s WHERE id = {}".format(id)
+    val = (data[0], data[1])
+    try:
+      my_cursor.execute(sql, val)
+    except Exception as e:
+      return e
 
-  def delete(self):
-    pass
-
-  def close(self):
-    self.connection.close()
+  def truncate(self):
+    sql = "TRUNCATE TABLE work"
+    try:
+      my_cursor.execute(sql)
+    except Exception as e:
+      return e
+    return True
