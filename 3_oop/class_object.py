@@ -18,6 +18,16 @@ print(p2.age)
 # the __str__() Function
 print(p1)
 
+class Test():
+  def __init__(self):
+    print('hello i am test')
+
+  def __del__(self):
+    print("goodbye i been delete")
+
+
+t = Test()
+
 class Person:
   def __init__(self, name, age):
     self.name = name

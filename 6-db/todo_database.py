@@ -19,7 +19,7 @@ class Database():
 # create db todo and table work
 # table work have id, title , body , created
 # id = int , title = varchar , body = text , created = datetime()
-class Todo(Database):
+class Work(Database):
 
   def create_table(self):
     sql = """
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS work(
       my_cursor.execute(sql)
     except Exception as e:
       return e
-  def all_works(self, mode='DESC'):
+  def read_all(self, mode='DESC'):
     sql = "SELECT * FROM work ORDER BY id {}".format(mode)
     try:
       my_cursor.execute(sql)
