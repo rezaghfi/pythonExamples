@@ -6,10 +6,13 @@ class Database():
   my_db = my_cursor = None
 
   def __init__(self):
-    global my_db, my_cursor
-    my_db = mysql.connector.connect(host="localhost", user="root", password="", database="todo")
-    my_cursor = my_db.cursor()
-    print('connect to database')
+    try:
+      global my_db, my_cursor
+      my_db = mysql.connector.connect(host="localhost", user="root", password="", database="todo")
+      my_cursor = my_db.cursor()
+      print('connect to database')
+    except:
+      print('can not connect to database')
 
   def __del__(self):
     my_db.commit()
@@ -17,7 +20,21 @@ class Database():
 # table work have id, title , body , created
 # id = int , title = varchar , body = text , created = datetime()
 class Todo(Database):
-  def all_students(self, mode='DESC'):
+
+  def create_table(self):
+    sql = """
+CREATE TABLE IF NOT EXISTS work(
+  id int(11) NOT NULL AUTO_INCREMENT,
+  title varchar(100) NOT NULL,
+  body text NOT NULL,
+  created datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;"""
+    try:
+      my_cursor.execute(sql)
+    except Exception as e:
+      return e
+  def all_works(self, mode='DESC'):
     sql = "SELECT * FROM work ORDER BY id {}".format(mode)
     try:
       my_cursor.execute(sql)
