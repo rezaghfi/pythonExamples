@@ -7,3 +7,9 @@ def generate_password(length=8, chars=string.ascii_letters + string.digits + str
 x = generate_password(12)
 
 print(x)
+
+a = 5
+
+a += 5
+
+print(a)

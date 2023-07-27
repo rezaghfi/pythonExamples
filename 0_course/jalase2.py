@@ -78,7 +78,7 @@ x = memoryview(bytes(3))
 x = None # noneType
 
 # کد هایی که در این قسمت هستند در کلاس حضوری گفته شدند.
-indentation
+# indentation
 # this sample for learning
 """
 this
@@ -139,8 +139,8 @@ print(c)
 
 in1 = 12
 in2 = 2
-print("sum 12 + 2: "+in1+in2)
-print("sum 12 - 2: "+in1-in2)
-print("sum 12 * 2: "+in1*in2)
-print("sum 12 / 2: "+in1/in2)
+print("sum 12 + 2: ", in1+in2)
+print("sum 12 - 2: ", in1-in2)
+print("sum 12 * 2: ", in1*in2)
+print("sum 12 / 2: ", in1/in2)
 
