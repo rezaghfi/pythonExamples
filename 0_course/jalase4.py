@@ -36,11 +36,13 @@ print(a.find("A"))
 # = += *=
 x = 10
 x += 6
+y = 20
 # > < >= <= == !=
 # x is y
 # x in y
 # logical opertor : and or not
 x = 3
+print("y != x", (y!=x))
 print("is x == 3 and x > 2?", bool(x==3 and x>2))
 # identity opertor
 x = 3.0
@@ -49,7 +51,7 @@ print("is x equal to y? ", x is y)
 
 # membership operator
 x = "reza"
-z = ["reza", "hasan", "ali"]
+z = ["reza" , "hasan", "ali"]
 y = "my name is reza"
 print("is x in z?",x in z)
 print("is x in y?", x in y)
