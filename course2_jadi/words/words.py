@@ -1,4 +1,4 @@
-with open('./course2_jadi/persian_dict_19k.txt', encoding='utf8') as f:
+with open('./course2_jadi/words/persian_dict_19k.txt', encoding='utf8') as f:
   lines = f.read().split("\n")
 
 words = []
