@@ -1,7 +1,7 @@
 import todo_database
 
 db = todo_database.Database()
-wk = todo_database.Todo()
+wk = todo_database.Work()
 #sql = "insert into work(id, title, body, created) values (null, 'title 1', 'it is body of work 1', current_timestamp())"
 # print(db.insert(sql))
 # print(st.all_students())
